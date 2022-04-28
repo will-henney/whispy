@@ -1,0 +1,12 @@
+{
+  "_template": "gh:cjolowicz/cookiecutter-hypermodern-python",
+  "author": "William Henney",
+  "development_status": "Development Status :: 3 - Alpha",
+  "email": "whenney@gmail.com",
+  "friendly_name": "Whispy",
+  "github_user": "will-henney",
+  "license": "MIT",
+  "package_name": "whispy",
+  "project_name": "whispy",
+  "version": "0.0.0"
+}
