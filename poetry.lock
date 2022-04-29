@@ -47,14 +47,18 @@ tests = ["pytest"]
 
 [[package]]
 name = "aspy.refactor-imports"
+<<<<<<< HEAD
 version = "2.3.0"
+=======
+version = "3.0.1"
+>>>>>>> 9308602 (Bump reorder-python-imports from 2.6.0 to 3.1.0 (#17))
 description = "Utilities for refactoring imports in python-like syntax."
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-cached-property = "*"
+cached-property = {version = "*", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "astropy"
@@ -1449,14 +1453,14 @@ test = ["pytest (>=6.0.0)", "pytest-cov (>=3.0.0)", "pytest-qt"]
 
 [[package]]
 name = "reorder-python-imports"
-version = "2.8.0"
+version = "3.1.0"
 description = "Tool for reordering python imports"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-"aspy.refactor-imports" = ">=2.3.0,<3"
+"aspy.refactor-imports" = ">=2.3.0"
 
 [[package]]
 name = "requests"
@@ -1966,28 +1970,8 @@ argon2-cffi-bindings = [
     {file = "argon2_cffi_bindings-21.2.0-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:5e00316dabdaea0b2dd82d141cc66889ced0cdcbfa599e8b471cf22c620c329a"},
 ]
 "aspy.refactor-imports" = [
-    {file = "aspy.refactor_imports-2.3.0-py2.py3-none-any.whl", hash = "sha256:a60432fc0c0b948aa371da520b896ddcbbee71b1820eeda6d2c04f039bac13b9"},
-    {file = "aspy.refactor_imports-2.3.0.tar.gz", hash = "sha256:5a7775b31e55a762f807c218a3f9f1a7ff1313d766605a301f2ed937cdfa242a"},
-]
-astropy = [
-    {file = "astropy-5.0.4-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:89690dc5a0b81be16cc2db2a565f9a5b01901cb29124e9c96a60b8115359d425"},
-    {file = "astropy-5.0.4-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:37f8a52a091f9f652e1389453eab727e1546153b6bfe29e88c3095ba2abc97e1"},
-    {file = "astropy-5.0.4-cp310-cp310-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:64e6fbd475f7ddf79b8a11017c5ef06e8a067d0ceb1385f1bfb9c6b6f6d15734"},
-    {file = "astropy-5.0.4-cp310-cp310-win32.whl", hash = "sha256:90be582e150b42a32ea166d3d622e42a489ec354890dcdefcbd6f1e6013f7fa5"},
-    {file = "astropy-5.0.4-cp310-cp310-win_amd64.whl", hash = "sha256:304e83dfb7235e2aa3d889b6b90a5b8032acaa887be01d77cd74a2856e6c5eef"},
-    {file = "astropy-5.0.4-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:87416b21419f7718b6ceeaa5df31550ecd3b93937af77e5df1743f4cf4d5deba"},
-    {file = "astropy-5.0.4-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:60dbda630ad1ba552c387f54898e733a09f0a8482eb1e855f222ec1e93445639"},
-    {file = "astropy-5.0.4-cp38-cp38-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:c8ff2e6a3d58e26b9950d39a4496ab4092982a1c83b551c05309776eb585804f"},
-    {file = "astropy-5.0.4-cp38-cp38-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:3ba320708b175ff87d9bbaba43104a98dfd8f2764b5e0ae40a86e27f25046fad"},
-    {file = "astropy-5.0.4-cp38-cp38-win32.whl", hash = "sha256:b3a97c8aec1b6e84f17710c004b9b3bc3dff8d036736c051b882f63e1c79fe25"},
-    {file = "astropy-5.0.4-cp38-cp38-win_amd64.whl", hash = "sha256:9c584d41a8bc3446aa7dc24102dfdf6247d488dbecd1f1dc433ed2c5f8101279"},
-    {file = "astropy-5.0.4-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:6f69a07773d5114c83152aa6bd20d88858534960c45d211312e65f5e1ad14f60"},
-    {file = "astropy-5.0.4-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:50d8c58a232b34cb969186418b4b6314a22f25dc8a7ac6ea306f115316b07932"},
-    {file = "astropy-5.0.4-cp39-cp39-manylinux_2_12_i686.manylinux2010_i686.whl", hash = "sha256:fdcf04de88946068a1abbb4ea8664dee8b7cd221ca547d00cf10fc9db76de3ce"},
-    {file = "astropy-5.0.4-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl", hash = "sha256:18c916417803273bfb6cfc56c7d9dca37fefa9d05c259d29346d3040e51184a6"},
-    {file = "astropy-5.0.4-cp39-cp39-win32.whl", hash = "sha256:3a23ca012799969deebe1e64b72c3095c90e6861d8a2e8c989382b333d418aca"},
-    {file = "astropy-5.0.4-cp39-cp39-win_amd64.whl", hash = "sha256:d2b2e1f23f5cf91a9067028ec09d8d4daf67c2027707563c47e10ed9009fefd5"},
-    {file = "astropy-5.0.4.tar.gz", hash = "sha256:001184f1a9c3f526a363883ce28efb9cbf076df3d151ca3e131509a248f0dfb9"},
+    {file = "aspy.refactor_imports-3.0.1-py2.py3-none-any.whl", hash = "sha256:bc257946fdf5abd9c60393cfb8d0b5d45a2b87d1ee0ede46584c8be5567bc669"},
+    {file = "aspy.refactor_imports-3.0.1.tar.gz", hash = "sha256:df497c3726ee2931b03d403e58a4590f7f4e60059b115cf5df0e07e70c7c73be"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
@@ -2945,8 +2929,8 @@ qtpy = [
     {file = "QtPy-2.0.1.tar.gz", hash = "sha256:adfd073ffbd2de81dc7aaa0b983499ef5c59c96adcfdcc9dea60d42ca885eb8f"},
 ]
 reorder-python-imports = [
-    {file = "reorder_python_imports-2.8.0-py2.py3-none-any.whl", hash = "sha256:03354608c610a25cba75a352ad86552849dcf3c90849fcb415298efc911a4ecf"},
-    {file = "reorder_python_imports-2.8.0.tar.gz", hash = "sha256:435af2a6feb39de3c4b7a415079f85b4b0052d3a7ed9ea7b269b0aff725abdaf"},
+    {file = "reorder_python_imports-3.1.0-py2.py3-none-any.whl", hash = "sha256:b0ad7c75d8dbf0941f005954764dc0c4673416a7cf15f1710e89bdd2b965ef5"},
+    {file = "reorder_python_imports-3.1.0.tar.gz", hash = "sha256:6b7a810ee77a9be0e646033d034ce02457e32597c5f48e5faec1866ca9eb4957"},
 ]
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
