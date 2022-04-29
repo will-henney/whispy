@@ -16,8 +16,14 @@ classifiers = [
 Changelog = "https://github.com/will-henney/whispy/releases"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 click = "^8.0.1"
+jupyter = "^1.0.0"
+cmasher = "^1.6.3"
+seaborn = "^0.11.2"
+astropy = "^5.0.4"
+mpdaf = "^3.5"
+pandas = "^1.4.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
