@@ -2,11 +2,13 @@
 
 Will Henney 2022-04-27 - Initial version is for MUSE spectra
 """
-
-from .linetools import EmissionLine, SpectralRange, VelocityScale
-import numpy as np
-from astropy.modeling import models, fitting
+from astropy.modeling import fitting
+from astropy.modeling import models
 from mpdaf.obj import Cube  # type: ignore
+
+from .linetools import EmissionLine
+from .linetools import SpectralRange
+from .linetools import VelocityScale
 
 FITTER = fitting.LevMarLSQFitter()
 

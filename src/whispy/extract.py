@@ -2,14 +2,19 @@
 
 Author: Will Henney, IRyA-UNAM, 2021
 """
-from collections.abc import Sequence
-from typing import Optional, Union
-import numpy as np
-from mpdaf.obj import Cube  # type: ignore
-from numpy.polynomial import Chebyshev as T
 import itertools
-from astropy.wcs import WCS  # type: ignore
+from collections.abc import Sequence
+from dataclasses import dataclass
+from typing import Optional
+from typing import Union
+
+import numpy as np
 from astropy.io import fits  # type: ignore
+from astropy.wcs import WCS  # type: ignore
+from numpy.polynomial import Chebyshev as T
+from tetrabloks import rebin_utils
+
+from .linetools import EmissionLine
 
 
 def _am_i_special(i: int, j: int) -> bool:
@@ -68,7 +73,7 @@ def fit_continuum(cube, wav_ranges, deg=1, median=True, verbose=True):
         try:
             p = T.fit(x, y, deg=deg)
             cont_cube.data[:, j, i] = p(wavs)
-        except:
+        except BaseException:
             cont_cube.data[:, j, i] = 0.0
             cont_cube.mask[:, j, i] = True
     return cont_cube
@@ -140,7 +145,7 @@ def pv_fit_continuum(
             p = T.fit(x, y, deg=deg)
             # Fill in corresponding row of the output image
             cont_pvim[j, :] = p(wavs)
-        except:
+        except BaseException:
             # If we fail for any reason, then just set zeros
             cont_pvim[j, :] = 0.0
     return cont_pvim
@@ -170,12 +175,6 @@ def pvslice(im, w, wavrange, posrange):
 
     xslice, yslice = slice(*xlim.astype(int)), slice(*ylim.astype(int))
     return im[yslice, xslice], w.slice((yslice, xslice))
-
-
-from tetrabloks import rebin_utils
-from .linetools import EmissionLine
-
-from dataclasses import dataclass
 
 
 @dataclass

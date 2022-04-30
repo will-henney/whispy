@@ -5,20 +5,21 @@ The lines need to have been continuum-subtracted first - see extract.py
 Author: Will Henney, IRyA-UNAM, 2021
 """
 from pathlib import Path
+
+import astropy.constants as const
+import astropy.units as u
 import numpy as np
-from matplotlib import pyplot as plt
+import pandas as pd
 import seaborn as sns
 from mpdaf.obj import Cube
-import astropy.units as u
-import astropy.constants as const
-import pandas as pd
+from mpdaf.obj import Image
 
 LIGHT_SPEED_KMS = const.c.to(u.km / u.s).value
 FIGPATH = Path(".")
 SAVEPATH = Path(".")
 
 
-def find_moments(cube):
+def find_moments(cube: Cube) -> tuple[Image, Image, Image]:
     """
     Returns the normalized wavelength moments: mom0, mom1, mom2
 

@@ -1,8 +1,9 @@
 """Classes and functions to represent emission lines
 """
 from dataclasses import dataclass
-import astropy.units as u  # type: ignore
+
 import astropy.constants as const  # type: ignore
+import astropy.units as u  # type: ignore
 
 LIGHT_SPEED_KMS = const.c.to(u.km / u.s).value
 

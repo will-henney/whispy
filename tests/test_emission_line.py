@@ -1,6 +1,9 @@
-import pytest
 import numpy as np
-from whispy.linetools import SpectralRange, EmissionLine, VelocityScale, LIGHT_SPEED_KMS
+import pytest
+
+from whispy.linetools import LIGHT_SPEED_KMS
+from whispy.linetools import SpectralRange
+from whispy.linetools import VelocityScale
 
 
 def test_light_speed():
