@@ -25,6 +25,7 @@ astropy = ">=5.0.4"
 mpdaf = ">=3.5"
 pandas = ">=1.4.2"
 scipy = {python = ">=3.9,<3.11", version = ">=1.8.0"}
+tetrabloks = {git = "https://github.com/will-henney/tetrabloks.git"}
 
 [tool.poetry.dev-dependencies]
 pytest = ">=6.2.5"
