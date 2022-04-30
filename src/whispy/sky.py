@@ -1,4 +1,4 @@
-"""Utilities for fitting and removing sky lines
+"""Utilities for fitting and removing sky lines.
 
 Will Henney 2022-04-27 - Initial version is for MUSE spectra
 """
@@ -14,10 +14,10 @@ FITTER = fitting.LevMarLSQFitter()
 
 
 class Sky:
-    """
-    An emission line with a sky component in a MUSE cube.  The sky
-    component is assumed spatially constant over the field and is
-    fitted by a Gaussian
+    """An emission line with a sky component in a MUSE cube.
+
+    The sky component is assumed spatially constant over the field and
+    is fitted by a Gaussian
     """
 
     def __init__(
@@ -27,6 +27,7 @@ class Sky:
         full_vlim: tuple[float, float] = (-500.0, 500.0),
         sky_vlim: tuple[float, float] = (-50.0, 50.0),
     ):
+        """`cube` should be an `mpdaf.obj.Cube`."""
         self.em = em
         # The full spectral range is only for visualization purposes
         self.full_range = SpectralRange(self.em.wav0, full_vlim)
@@ -59,9 +60,10 @@ class Sky:
 
 
 def remove_sky(sky: Sky) -> Cube:
-    """
-    Subtract the Gaussian model that was fitted to the sky component
-    and return the result as a new cube
+    """Subtract the Gaussian model from cube.
+
+    Subtract the model that was fitted to the sky component and return
+    the result as a new cube
     """
     skyspec = sky.gauss(sky.wavs)
     newcube = sky.cube.copy()
