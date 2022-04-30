@@ -7,7 +7,7 @@ def test_imports():
     from whispy import extract
     from whispy import moments
     from whispy import sky
-    from whispy import masktool
+    from whispy import masktools
 
     # Check that a random function is where it should be
     assert "find_moments" in dir(moments)
