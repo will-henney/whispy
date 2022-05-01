@@ -25,7 +25,7 @@ class Sky:
         cube: Cube,
         em: EmissionLine,
         full_vlim: tuple[float, float] = (-500.0, 500.0),
-        sky_vlim: tuple[float, float] = (-50.0, 50.0),
+        sky_vlim: tuple[float, float] = (-100.0, 100.0),
     ):
         """`cube` should be an `mpdaf.obj.Cube`."""
         self.em = em
