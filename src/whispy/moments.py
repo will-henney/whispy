@@ -129,7 +129,7 @@ def moments_corner_plot(
             f"sig({label})": np.array(srange),
         }
     )
-    df = df.append(df0)
+    df = pd.concat([df, df0], ignore_index=True)
     g = sns.pairplot(
         df,
         kind="hist",
